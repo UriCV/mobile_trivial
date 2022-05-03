@@ -1,17 +1,14 @@
 <script setup>
-
+import HelloWorld from './components/HelloWorld.vue';
+import HomeMain from './components/HomeMain.vue';
 </script>
 
 <template>
-  <header>
-    <h1>Dramaris</h1>
-  </header>
 
-  <main>
-  
-  </main>
+  <HomeMain/>
 </template>
 
 <style>
+
 
 </style>
