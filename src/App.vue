@@ -1,17 +1,16 @@
 <script setup>
-
+import HomeMain from './components/HomeMain.vue';
+import Category from './components/Category.vue';
+import Response from './components/Response.vue';
 </script>
 
 <template>
-  <header>
-    <h1>Dramaris</h1>
-  </header>
-
-  <main>
-  
-  </main>
+  <HomeMain/>
 </template>
 
 <style>
+
+
+@import url('./assets/base.css');
 
 </style>
