@@ -5,7 +5,7 @@ import Response from './components/Response.vue';
 </script>
 
 <template>
-  <Response/>
+  <HomeMain/>
 </template>
 
 <style>
