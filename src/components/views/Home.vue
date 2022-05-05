@@ -1,17 +1,12 @@
 <script setup>
-defineProps({
-    title: {
-        type: String,
-        required: true
-    }
-})
+
 </script>
 <body>
     
 </body>
 <template>
     <main>
-        <img class="mainIcon" src="./icons/titleIcon.png" alt="">
+        <img class="mainIcon" src="../icons/titleIcon.png" alt="">
 
         <div class="title">
             <h1>Trivial Game</h1>
@@ -26,9 +21,9 @@ defineProps({
             </div>
         </section>
 
-        <a href="paginaSeleccionDeCategoria" class="startBtn">
-            <img class="startIcon" src="./icons/start.png" alt="">
-        </a>
+        <router-link to="/category" class="startBtn">
+            <img class="startIcon" src="../icons/start.png" alt="">
+        </router-link>
     </main>
 </template>
 

@@ -1,15 +1,12 @@
 <script setup>
-import HomeMain from './components/HomeMain.vue';
-import Category from './components/Category.vue';
-import Response from './components/Response.vue';
+
 </script>
 
 <template>
-  <HomeMain/>
+  <router-view></router-view>
 </template>
 
 <style>
-
 
 @import url('./assets/base.css');
 
