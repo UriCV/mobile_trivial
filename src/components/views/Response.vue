@@ -1,8 +1,24 @@
 <script setup>
 
+/* import axios from "axios";
+export default {
+    data: () => ({
+        result: null
+    }),
+    created() {
+        axios.get("https://opentdb.com/api.php?amount=10&type=multiple").then((result) => {
+        this.result = result.data;
+        })
+    }
+}; */
+
 </script>
 
 <template>
+
+
+
+
 <img class="questionIcon" src="./icons/question.png" alt="">
 <h1>Question?</h1>
 <div class="options">
