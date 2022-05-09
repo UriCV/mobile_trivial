@@ -1,26 +1,7 @@
-<script setup>
-
-/* import axios from "axios";
-export default {
-    data: () => ({
-        result: null
-    }),
-    created() {
-        axios.get("https://opentdb.com/api.php?amount=10&type=multiple").then((result) => {
-        this.result = result.data;
-        })
-    }
-}; */
-
-</script>
-
 <template>
 
-
-
-
-<img class="questionIcon" src="./icons/question.png" alt="">
-<h1>Question?</h1>
+<!-- <img class="questionIcon" src="./icons/question.png" alt=""> -->
+<h1>{{result.question}}</h1>
 <div class="options">
 <button @click="toggle">toggle</button>
 <button @click="toggle">toggle</button>
@@ -28,14 +9,34 @@ export default {
 <button @click="toggle">toggle</button>
 </div>
 
-
 </template>
+
+<script>
+
+import axios from "axios";
+
+export default {
+    data: () => ({
+        result: null
+    }),
+    created() {
+        axios.get("https://opentdb.com/api.php?amount=1&type=multiple").then((result) => {
+        this.result = result.data.results[0];
+        console.log(result.data.results[0].question);
+        })
+    }
+};
+
+"&queue;" === ","
+
+</script>
 
 <style scoped>
 
 .options{
     
 }
+
 .options button{
     display: flex;
     flex-direction: column;
@@ -44,6 +45,7 @@ export default {
     margin-bottom: 10px;
     font-size: 20px;
 }
+
 h1{
     font-weight: 800;
 }

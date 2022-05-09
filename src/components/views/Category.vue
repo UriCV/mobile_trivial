@@ -43,6 +43,7 @@ h2{
 .category{
     display: flex;
     margin: 20px;
+    gap: 20px;
 }
 
 .categoryBtns{
