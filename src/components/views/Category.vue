@@ -3,44 +3,60 @@
 </script>
 
 <template>
-    <router-link to="/response">response</router-link>
-    
-    <section class="iconsLeft">
-        <img src="../icons/start.png" alt="">
-        <img src="@/components/icons/" alt="">
-        <img src="@/components/icons/" alt="">
-        <img src="@/components/icons/" alt="">
+    <h2>Choose a Category</h2>
+    <section class="category">
 
-    </section>
+        <div class="iconsLeft">
+            <img src="@/components/icons/art.png" alt="">
+            <img src="@/components/icons/history.png" alt="">
+            <img src="@/components/icons/entertainment.png" alt="">
+            <img src="@/components/icons/random.png" alt="">
+        </div>
 
-    <section class="categoryBtns">
-        <button>Art & Literature</button>
-        <button>Geography</button>
-        <button>History</button>
-        <button>Science & Nature</button>
-        <button>Entertainment</button>
-        <button>Sports & Leisure</button>
-        <button>Random</button>
-    </section>
+        <div class="categoryBtns">
+            <button @click="$router.push('response')" to="/response" class="artBtn">Art & Literature</button>
+            <button @click="$router.push('response')" class="geographyBtn">Geography</button>
+            <button @click="$router.push('response')" class="historyBtn">History</button>
+            <button @click="$router.push('response')" class="scienceBtn">Science & Nature</button>
+            <button @click="$router.push('response')" class="entertainmentBtn">Entertainment</button>
+            <button @click="$router.push('response')" class="sportsBtn">Sports & Leisure</button>
+            <button @click="$router.push('response')" class="randomBtn">Random</button>
+        </div>
 
-    <section class="iconsRight">
-
+        <div class="iconsRight">
+            <img src="@/components/icons/geography.png" alt="">
+            <img src="@/components/icons/science.png" alt="">
+            <img src="@/components/icons/sport.png" alt="">
+        </div>
+        
     </section>
 </template>
 
 <style scoped>
+
+h2{
+    display: flex;
+    justify-content: center;
+    font-weight: 800;
+}
+
+.category{
+    display: flex;
+    margin: 20px;
+}
 
 .categoryBtns{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 3rem;
+    gap: 2rem;
 }
 
 .categoryBtns button{
     border-radius: 30px;
     font-size: 18px;
+    font-weight: 600;
     width: 200px;
     display: flex;
     justify-content: center;
@@ -48,11 +64,47 @@
 }
 
 .iconsLeft{
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 140px;
 }
 
 .iconsRight{
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 140px;
 }
+
+.artBtn{
+    background: #C76BFF;
+}
+
+.geographyBtn{
+    background: #00ADEB;
+}
+
+.historyBtn{
+    background: #FEEF8F;
+}
+
+.scienceBtn{
+    background: #71FF7F;
+}
+
+.entertainmentBtn{
+    background: #FE8FF3;
+}
+
+.sportsBtn{
+    background: #FFBF84;
+}
+
+.randomBtn{
+    background: #C4C4C4;
+}
+
+
 
 </style>
