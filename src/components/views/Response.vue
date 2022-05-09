@@ -1,6 +1,6 @@
 <template>
 
-<!-- <img class="questionIcon" src="./icons/question.png" alt=""> -->
+<img class="questionIcon" src="@/components/icons/question.png" alt="">
 <h1>{{result.question}}</h1>
 <div class="options">
 <button @click="toggle">toggle</button>

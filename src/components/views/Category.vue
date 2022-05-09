@@ -42,7 +42,7 @@ h2{
 
 .category{
     display: flex;
-    margin: 20px;
+    margin: 2rem;
     gap: 20px;
 }
 
