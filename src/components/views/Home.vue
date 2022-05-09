@@ -58,6 +58,7 @@ h2{
     justify-content: center;
     align-items: center;
     margin-bottom: 15px;
+    font-weight: 600;
 }
 
 .startBtn{
@@ -93,6 +94,7 @@ h2{
     border-radius: 30px;
     width: 118px;
     height: 45px;
+    font-weight: 600;
 }
 
 .dificultyBtns{
