@@ -14,7 +14,7 @@
         </div>
 
         <div class="categoryBtns">
-            <button @click="$router.push('response')" to="/response" class="artBtn">Art & Literature</button>
+            <button @click="$router.push('response')" class="artBtn">Art & Literature</button>
             <button @click="$router.push('response')" class="geographyBtn">Geography</button>
             <button @click="$router.push('response')" class="historyBtn">History</button>
             <button @click="$router.push('response')" class="scienceBtn">Science & Nature</button>

@@ -1,7 +1,7 @@
 <template>
 
 <img class="questionIcon" src="@/components/icons/question.png" alt="">
-<h1>{{result.question}}</h1>
+<h1>{{result}}</h1>
 <div class="options">
 <button @click="toggle">toggle</button>
 <button @click="toggle">toggle</button>
@@ -21,11 +21,12 @@ export default {
     }),
     created() {
         axios.get("https://opentdb.com/api.php?amount=1&type=multiple").then((result) => {
-        this.result = result.data.results[0];
+        this.result = result.data.results[0].question;
         console.log(result.data.results[0].question);
         })
     }
 };
+
 
 </script>
 
