@@ -79,31 +79,31 @@ h2{
 }
 
 .artBtn{
-    background: #C76BFF;
+    background: var(--art);
 }
 
 .geographyBtn{
-    background: #00ADEB;
+    background: var(--geography);
 }
 
 .historyBtn{
-    background: #FEEF8F;
+    background: var(--history);
 }
 
 .scienceBtn{
-    background: #71FF7F;
+    background: var(--science);
 }
 
 .entertainmentBtn{
-    background: #FE8FF3;
+    background: var(--entertainment);
 }
 
 .sportsBtn{
-    background: #FFBF84;
+    background: var(--sports);
 }
 
 .randomBtn{
-    background: #C4C4C4;
+    background: var(--random);
 }
 
 
