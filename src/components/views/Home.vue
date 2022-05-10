@@ -21,7 +21,7 @@
             </div>
         </section>
 
-        <router-link to="/category" class="startBtn">
+        <router-link to="category" class="startBtn">
             <img class="startIcon" src="../icons/start.png" alt="">
         </router-link>
     </main>
