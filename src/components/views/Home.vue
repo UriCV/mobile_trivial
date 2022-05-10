@@ -38,6 +38,7 @@ export default {
             select === 'hard' ? this.hard = true : this.hard = false
             
             this.difficulty = select
+            console.log(this.difficulty)
         }
     }
 }

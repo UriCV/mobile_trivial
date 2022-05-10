@@ -1,7 +1,7 @@
 <template>
 
 <img class="questionIcon" src="@/components/icons/question.png" alt="">
-<h1>{{result}}</h1>
+<h1 v-html="result"></h1>
 <div class="options">
 <button @click="toggle">toggle</button>
 <button @click="toggle">toggle</button>
@@ -26,6 +26,7 @@ export default {
         })
     }
 };
+
 
 
 </script>
