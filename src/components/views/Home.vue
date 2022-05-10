@@ -25,9 +25,9 @@
 export default {
     data() {
         return {
-            difficulty: 'easy',
-            easy: true,
-            medium: false,
+            difficulty: 'medium',
+            easy: false,
+            medium: true,
             hard: false,
         }
     },
