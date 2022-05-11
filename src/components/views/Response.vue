@@ -20,26 +20,40 @@ export default {
 
 <template>
 
-    <img class="img" src="src\components\icons\question.png" alt="">
-    <h1 v-html="result"></h1>
-    <button  class="Question">
-        Damaris
-        <span class="button__text"></span>
-        <span class="button--   "></span>
-        <ion-icon name="chevron-forward-outline"></ion-icon>
-    </button>
-    <button class="Question2">Dramaris</button>
-    <button class="Question 3">Mamaris</Button>
-    <button class="Question 1">Momento Damaris</button>
+
+        <img class="responseIcon" src="src\components\icons\question.png" alt="">
+        <h1 v-html="result"></h1>
+
+
+    <section class="responseBtns">
+        <button  class="Question">
+            Damaris
+            <span class="button__text"></span>
+            <span class="button--   "></span>
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+        </button>
+        <button class="Question2">Dramaris</button>
+        <button class="Question 3">Mamaris</Button>
+        <button class="Question 1">Momento Damaris</button>
+    </section>
 
 </template>
 
 <style>
 
-.title{
+*{
+    margin: 0.1rem;
+}
+
+
+
+h1{
     margin-bottom:50px;
     display: flex;
     justify-content: center;
+    font-weight: 800;
+    font-size: x-large;
+    text-align: center;
 }
 
 .Question {
@@ -102,9 +116,14 @@ export default {
     font-family: 'JetBrains Mono', monospace;   
 }
 
-.img{
+.responseIcon{
+    margin-bottom: 4rem;
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
-    align-content: center;
+    justify-content: center;
+    align-items: center;
+
 }
 
 </style>

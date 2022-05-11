@@ -92,6 +92,7 @@ h2{
     display: flex;
     justify-content: center;
     align-items: flex-end;
+    margin-top: -1.5rem;
 }
 
 .startIcon{
