@@ -1,4 +1,34 @@
-<script setup>
+<script>
+
+export default {
+    data() {
+        return {
+            category: 'random',
+            art: false,
+            history: false,
+            science: false,
+            sports: false,
+            geography: false,
+            entertainment: false,
+            random: true,
+        }
+
+    },
+    methods: {
+        setCategory(event, select) {
+            select === 'art' ? this.art = true : this.art = false
+            select === 'history' ? this.history = true : this.history = false
+            select === 'science' ? this.science = true : this.science = false
+            select === 'sports' ? this.sports = true : this.sports = false
+            select === 'geography' ? this.geography = true : this.geography = false
+            select === 'entertainment' ? this.entertainment = true : this.entertainment = false
+            select === 'random' ? this.random = true : this.random = false
+            
+            this.category = event.target.id
+            console.log(this.category)
+        }
+    }
+}
 
 </script>
 
@@ -14,13 +44,13 @@
         </div>
 
         <div class="categoryBtns">
-            <button @click="$router.push('response')" to="/response" class="artBtn">Art & Literature</button>
-            <button @click="$router.push('response')" class="geographyBtn">Geography</button>
-            <button @click="$router.push('response')" class="historyBtn">History</button>
-            <button @click="$router.push('response')" class="scienceBtn">Science & Nature</button>
-            <button @click="$router.push('response')" class="entertainmentBtn">Entertainment</button>
-            <button @click="$router.push('response')" class="sportsBtn">Sports & Leisure</button>
-            <button @click="$router.push('response')" class="randomBtn">Random</button>
+            <button @click="$router.push('response'), (event) => setCategory(event)" id="art" class="artBtn">Art & Literature</button>
+            <button @click="$router.push('response'), (event) => setCategory(event)" id="geography" class="geographyBtn">Geography</button>
+            <button @click="$router.push('response'), (event) => setCategory(event)" id="history" class="historyBtn">History</button>
+            <button @click="$router.push('response'), (event) => setCategory(event)" id="science" class="scienceBtn">Science & Nature</button>
+            <button @click="$router.push('response'), (event) => setCategory(event)" id="entertainment" class="entertainmentBtn">Entertainment</button>
+            <button @click="$router.push('response'), (event) => setCategory(event)" id="sports" class="sportsBtn">Sports & Leisure</button>
+            <button @click="$router.push('response'), (event) => setCategory(event)" id="random" class="randomBtn">Random</button>
         </div>
 
         <div class="iconsRight">
@@ -32,18 +62,18 @@
     </section>
 </template>
 
-<style scoped>
+<style>
 
 h2{
     display: flex;
     justify-content: center;
     font-weight: 800;
+    margin-bottom: 1rem;
 }
 
 .category{
     display: flex;
-    margin: 2rem;
-    gap: 20px;
+    gap: 10px;
 }
 
 .categoryBtns{

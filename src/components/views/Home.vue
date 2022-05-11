@@ -1,9 +1,3 @@
-<script setup>
-
-</script>
-<body>
-    
-</body>
 <template>
     <main>
         <img class="mainIcon" src="../icons/titleIcon.png" alt="">
@@ -27,6 +21,29 @@
     </main>
 </template>
 
+<script>
+export default {
+    data() {
+        return {
+            difficulty: 'medium',
+            easy: false,
+            medium: true,
+            hard: false,
+        }
+    },
+    methods: {
+        setDificulty(select) {
+            select === 'easy' ? this.easy = true : this.easy = false
+            select === 'medium' ? this.medium = true : this.medium = false
+            select === 'hard' ? this.hard = true : this.hard = false
+            
+            this.difficulty = select
+            console.log(this.difficulty)
+        }
+    }
+}
+</script>
+
 <style scoped>
 
 main{
@@ -41,6 +58,16 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
+    animation: rotation 40s infinite linear;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
 }
 
 h1{
@@ -65,6 +92,7 @@ h2{
     display: flex;
     justify-content: center;
     align-items: flex-end;
+    margin-top: -1.5rem;
 }
 
 .startIcon{
