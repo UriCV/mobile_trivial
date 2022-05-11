@@ -1,4 +1,36 @@
+<script>
+
+export default {
+    data() {
+        return {
+            difficulty: '',
+            easy: this.select,
+            medium: false,
+            hard: false,
+        }
+    },
+    methods: {
+        setDificulty(select) {
+            const easy = new Vue({
+                el: '#easy',
+                data: {
+                    select: true,
+                }
+            })
+            return easy
+            const medium = 'medium' ? this.medium = true : this.medium = false
+            const hard = 'hard' ? this.hard = true : this.hard = false
+            
+            this.difficulty = select
+            console.log(this.difficulty)
+        }
+    }
+}
+
+</script>
+
 <template>
+
     <main>
         <img class="mainIcon" src="../icons/titleIcon.png" alt="">
 
@@ -9,9 +41,9 @@
         <section class="selectDificulty">
             <h2>Choose your dificulty:</h2>
             <div class="dificultyBtns">
-                <button class="easy" @click="setDificulty('easy')">EASY</button>
-                <button class="medium" @click="setDificulty('medium')">MEDIUM</button>
-                <button class="hard" @click="setDificulty('hard')">HARD</button>
+                <button class="easy" @click="setDificulty(easy)">EASY</button>
+                <button class="medium" @click="setDificulty(medium)">MEDIUM</button>
+                <button class="hard" @click="setDificulty(hard)">HARD</button>
             </div>
         </section>
 
@@ -19,30 +51,8 @@
             <img class="startIcon" src="../icons/start.png" alt="">
         </router-link>
     </main>
-</template>
 
-<script>
-export default {
-    data() {
-        return {
-            difficulty: 'medium',
-            easy: false,
-            medium: true,
-            hard: false,
-        }
-    },
-    methods: {
-        setDificulty(select) {
-            select === 'easy' ? this.easy = true : this.easy = false
-            select === 'medium' ? this.medium = true : this.medium = false
-            select === 'hard' ? this.hard = true : this.hard = false
-            
-            this.difficulty = select
-            console.log(this.difficulty)
-        }
-    }
-}
-</script>
+</template>
 
 <style scoped>
 

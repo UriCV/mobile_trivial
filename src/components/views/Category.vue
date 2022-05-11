@@ -1,5 +1,7 @@
 <script>
 
+
+
 export default {
     data() {
         return {
@@ -33,6 +35,7 @@ export default {
 </script>
 
 <template>
+
     <h2>Choose a Category</h2>
     <section class="category">
 
@@ -60,6 +63,7 @@ export default {
         </div>
         
     </section>
+    
 </template>
 
 <style>
@@ -135,7 +139,5 @@ h2{
 .randomBtn{
     background: var(--random);
 }
-
-
 
 </style>

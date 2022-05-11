@@ -7,7 +7,7 @@ export default {
         result: null
     }),
     async created() {
-        await axios.get("https://opentdb.com/api.php?amount=1&type=multiple").then((result) => {
+        await axios.get("https://opentdb.com/api.php?amount=1&type=multiple{{di}}").then((result) => {
         this.result = result.data.results[0].question;
         this.all = result.data
         console.log(result.data.results[0].question);
@@ -79,7 +79,6 @@ h1{
     font-size: 1.5em;
     font-weight: 300;
     color: black;
-
     padding: 10px;
     border-radius: 20px;
     box-shadow: 0px 0px 5px #000;
