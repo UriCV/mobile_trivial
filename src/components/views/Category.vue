@@ -33,7 +33,7 @@ export default {
             
             this.category = event.target.id
             console.log(this.category)
-            this.$router.push({ path:'response', params:{ category: this.category, difficulty: this.difficulty } })
+            this.$router.push({ name:'Response', params:{ category: this.category, difficulty: this.difficulty } })
         }
     }
 }

@@ -15,38 +15,35 @@ export default {
         },
     },
 
-
+//25
 
     data: () => ({
         result: null
     }),
     async created() {
         await axios.get("https://opentdb.com/api.php?amount=1&type=multiple").then((result) => {
-        this.result = result.data.results[0].question;
-        this.all = result.data
-        console.log(result.data.results[0].question);
-        console.log(result.data)
+            this.all = result.data;
+            this.result = result.data.results[0].question;
+            /* this.answer = result.data.results[0].correct_answer;
+            this.incorrect_answer = result.data.results[0].incorrect_answers; */
+            console.log(result.data.results[0].question);
+            console.log(result.data);
         })
     }
 };
-
-
 
 </script>
 
 <template>
 
-
         <img class="responseIcon" src="src\components\icons\question.png" alt="">
         <h1 v-html="result"></h1>
-
 
     <section class="responseBtns">
         <button  class="Question">
             Damaris
             <span class="button__text"></span>
             <span class="button--   "></span>
-            <ion-icon name="chevron-forward-outline"></ion-icon>
         </button>
         <button class="Question2">Dramaris</button>
         <button class="Question 3">Mamaris</Button>
@@ -60,8 +57,6 @@ export default {
 *{
     margin: 0.1rem;
 }
-
-
 
 h1{
     margin-bottom:50px;
@@ -95,7 +90,6 @@ h1{
     font-size: 1.5em;
     font-weight: 300;
     color: black;
-
     padding: 10px;
     border-radius: 20px;
     box-shadow: 0px 0px 5px #000;
