@@ -56,7 +56,7 @@ export default {
 
 <template>
 
-        <img  class="responseIcon" src="src\components\icons\question.png" alt="">
+        <img  class="responseIcon" src="@/icons/question.png" alt="">
         <h1 v-html="result"></h1>
 
     <section id="randomAnswer" class="responseBtns">
