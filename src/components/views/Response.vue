@@ -3,6 +3,20 @@
 import axios from "axios";
 
 export default {
+
+    props: {
+        category: {
+            type: String,
+            default: '',
+        },
+        difficulty: {
+            type: String,
+            default: '',
+        },
+    },
+
+
+
     data: () => ({
         result: null
     }),
@@ -15,6 +29,8 @@ export default {
         })
     }
 };
+
+
 
 </script>
 
