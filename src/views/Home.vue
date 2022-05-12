@@ -11,7 +11,7 @@
             <h1>Trivial Game</h1>
         </div>
 
-
+        <img src="@/icons/info.png" class="infoIcon">
 
         <router-link to="category" class="startBtn">
             <img class="startIcon" src="@/icons/start.png" alt="">
@@ -76,6 +76,17 @@ h2{
     height: 200px;
     display: flex;
     justify-content: center;
+}
+
+.infoIcon{
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
 </style>

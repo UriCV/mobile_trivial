@@ -1,6 +1,9 @@
 <script>
 
+import axios from 'axios';
+
 export default {
+
 
     data() {
         return {
@@ -23,6 +26,15 @@ export default {
     },
 
     created(){
+
+
+        //check category's id
+
+        /* axios.get(`https://opentdb.com/api_category.php`).then((result) => {
+            this.result = result.data;
+            console.log(this.result);
+        }) */
+        
         if (localStorage.getItem('difficulty')) {
             this.difficulty = localStorage.getItem('difficulty');
             this.setDifficulty(this.difficulty);
@@ -43,11 +55,11 @@ export default {
 <template>
 
     <section class="selectDificulty">
-        <h2>Choose your dificulty:</h2>
+        <h2>Select your dificulty:</h2>
         <div class="dificultyBtns">
-            <button class="easy" @click="setDifficulty(easy)">EASY</button>
-            <button class="medium" @click="setDifficulty(medium)">MEDIUM</button>
-            <button class="hard" @click="setDifficulty(hard)">HARD</button>
+            <button class="easy" @click="setDifficulty('easy')">EASY</button>
+            <button class="medium" @click="setDifficulty('medium')">MEDIUM</button>
+            <button class="hard" @click="setDifficulty('hard')">HARD</button>
         </div>
     </section>
     
@@ -63,13 +75,13 @@ export default {
         </div>
 
         <div class="categoryBtns">
-            <button  id="art" class="artBtn">Art & Literature</button>
-            <button  id="geography" class="geographyBtn">Geography</button>
-            <button  id="history" class="historyBtn">History</button>
-            <button  id="science" class="scienceBtn">Science & Nature</button>
-            <button  id="entertainment" class="entertainmentBtn">Entertainment</button>
-            <button  id="sports" class="sportsBtn">Sports & Leisure</button>
-            <button  id="random" class="randomBtn">Random</button>
+            <button :difficulty="difficulty" @click="$router.push({name: 'Answer', params: {difficulty: difficulty , id: '25'} })" class="artBtn">Art & Literature</button>
+            <button :difficulty="difficulty" @click="$router.push({name: 'Answer', params: {difficulty: difficulty , id: '22'} })" class="geographyBtn">Geography</button>
+            <button :difficulty="difficulty" @click="$router.push({name: 'Answer', params: {difficulty: difficulty , id: '01'} })" class="historyBtn">History</button>
+            <button :difficulty="difficulty" @click="$router.push({name: 'Answer', params: {difficulty: difficulty , id: '02'} })" class="scienceBtn">Science & Nature</button>
+            <button :difficulty="difficulty" @click="$router.push({name: 'Answer', params: {difficulty: difficulty , id: '03'} })" class="entertainmentBtn">Entertainment</button>
+            <button :difficulty="difficulty" @click="$router.push({name: 'Answer', params: {difficulty: difficulty , id: '21'} })" class="sportsBtn">Sports & Leisure</button>
+            <button :difficulty="difficulty" @click="$router.push({name: 'Answer', params: {difficulty: difficulty , id: '00'} })" class="randomBtn">Random</button>
         </div>
 
         <div class="iconsRight">
@@ -94,6 +106,7 @@ h2{
 .category{
     display: flex;
     gap: 10px;
+    margin-top: -1rem;
 }
 
 .categoryBtns{
@@ -101,7 +114,7 @@ h2{
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 0.1rem;
+    gap: 1rem;
 }
 
 .categoryBtns button{
@@ -189,10 +202,12 @@ h2{
     justify-content: center;
     align-items: center;
     gap: 6px;
+    margin-top: -2rem;
 }
 
 .selectDificulty{
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
+    margin-top: -2rem;
 }
 
 

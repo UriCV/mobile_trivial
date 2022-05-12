@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '@/views/Home.vue'
 import Category from '@/views/Category.vue'
-import Response from '@/views/Response.vue'
+import Answer from '@/views/Answer.vue'
 
 const router = createRouter({
     
@@ -10,7 +10,7 @@ const router = createRouter({
     routes: [
         { path: '/', name:'Home', component: Home },
         { path: '/category', name:'Category', component: Category },
-        { path: '/response', name:'Response', component: Response },
+        { path: '/answer', name:'Answer', component: Answer },
     ]
 })
 
