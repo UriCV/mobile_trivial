@@ -18,17 +18,37 @@ export default {
 //25
 
     data: () => ({
-        result: null
+        result: null,
+        list:
+        ['correct_answer','incorrect_answer','incorrect_answer1','incorrect_answer2'],
+        randomAnswer:''
     }),
     async created() {
         await axios.get("https://opentdb.com/api.php?amount=1&type=multiple").then((result) => {
             this.all = result.data;
             this.result = result.data.results[0].question;
-            /* this.answer = result.data.results[0].correct_answer;
-            this.incorrect_answer = result.data.results[0].incorrect_answers; */
+            this.correct_answer = result.data.results[0].correct_answer;
+            this.incorrect_answer = result.data.results[0].incorrect_answers[0];
+            this.incorrect_answer1 = result.data.results[0].incorrect_answers[1];
+            this.incorrect_answer2 = result.data.results[0].incorrect_answers[2];
+            
             console.log(result.data.results[0].question);
             console.log(result.data);
         })
+    },
+    
+    //order random answers everytime 
+    methods: {
+        picker: function(){
+            let randomAnswer = Math.floor (Math.random() * this.list.lenght);
+    
+    this.randomAnswer = this.list[randomAnswer];
+    return console.log(this.randomAnswer);
+        }
+    },
+
+    beforeCreated(){
+        this.picker();
     }
 };
 
@@ -36,19 +56,15 @@ export default {
 
 <template>
 
-        <img class="responseIcon" src="src\components\icons\question.png" alt="">
+        <img  class="responseIcon" src="src\components\icons\question.png" alt="">
         <h1 v-html="result"></h1>
 
-    <section class="responseBtns">
-        <button  class="Question">
-            Damaris
-            <span class="button__text"></span>
-            <span class="button--   "></span>
-        </button>
-        <button class="Question2">Dramaris</button>
-        <button class="Question 3">Mamaris</Button>
-        <button class="Question 1">Momento Damaris</button>
-    </section>
+    <section id="randomAnswer" class="responseBtns">
+        <button v-html="incorrect_answer" class="Question"></button>
+        <button v-html="correct_answer" class="Question2"></button>
+        <button v-html="incorrect_answer1" class="Question 3"></Button>
+        <button v-html="incorrect_answer2" class="Question 1"></button>
+    </section> 
 
 </template>
 
