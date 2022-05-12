@@ -1,7 +1,6 @@
 <script>
 
 
-
 export default {
     data() {
         return {
@@ -28,6 +27,7 @@ export default {
             
             this.category = event.target.id
             console.log(this.category)
+            this.$router.push({ name:'Response', params:{ category: this.category, difficulty: this.difficulty } })
         }
     }
 }
@@ -47,13 +47,13 @@ export default {
         </div>
 
         <div class="categoryBtns">
-            <button @click="$router.push('response'), (event) => setCategory(event)" id="art" class="artBtn">Art & Literature</button>
-            <button @click="$router.push('response'), (event) => setCategory(event)" id="geography" class="geographyBtn">Geography</button>
-            <button @click="$router.push('response'), (event) => setCategory(event)" id="history" class="historyBtn">History</button>
-            <button @click="$router.push('response'), (event) => setCategory(event)" id="science" class="scienceBtn">Science & Nature</button>
-            <button @click="$router.push('response'), (event) => setCategory(event)" id="entertainment" class="entertainmentBtn">Entertainment</button>
-            <button @click="$router.push('response'), (event) => setCategory(event)" id="sports" class="sportsBtn">Sports & Leisure</button>
-            <button @click="$router.push('response'), (event) => setCategory(event)" id="random" class="randomBtn">Random</button>
+            <button @click=" (event) => setCategory(event)" id="art" class="artBtn">Art & Literature</button>
+            <button @click=" (event) => setCategory(event)" id="geography" class="geographyBtn">Geography</button>
+            <button @click=" (event) => setCategory(event)" id="history" class="historyBtn">History</button>
+            <button @click=" (event) => setCategory(event)" id="science" class="scienceBtn">Science & Nature</button>
+            <button @click=" (event) => setCategory(event)" id="entertainment" class="entertainmentBtn">Entertainment</button>
+            <button @click=" (event) => setCategory(event)" id="sports" class="sportsBtn">Sports & Leisure</button>
+            <button @click=" (event) => setCategory(event)" id="random" class="randomBtn">Random</button>
         </div>
 
         <div class="iconsRight">
