@@ -49,12 +49,10 @@ export default {
             this.correct_answer = result.data.results[0].correct_answer;
             this.incorrect_answers = result.data.results[0].incorrect_answers;
             this.answers = [];
-
-            console.log(this.result.results);
             
             for(let i=0; i<this.incorrect_answers.length; i++) {
                 this.answers.push(this.incorrect_answers[i]);
-            }
+            };
 
             this.answers.splice(Math.floor(Math.random()*(this.answers.length + 1)), 0, this.correct_answer ); 
         })
@@ -62,6 +60,7 @@ export default {
     
     methods: {
         checkAnswer(answer) {
+
             this.show = false;
 
             if (answer == this.correct_answer) {
@@ -71,7 +70,7 @@ export default {
                 this.checked_answer = IncorrectIcon;
             }
         
-            for(let i=0; i<this.answers.length; i++){
+            for(let i = 0; i<this.answers.length; i++){
                 if(this.$refs.answers[i].innerText == this.correct_answer){
                 this.$refs.answers[i].children[0].classList.add("correctAnswer");
 
@@ -92,18 +91,14 @@ export default {
 </script>
 
 <template>
+    <img v-if="show" class="responseIcon" src="@/assets/icons/question.png" alt="">
+    <img v-else :src="checked_answer" class="responseIcon">
 
-        <img v-if="show" class="responseIcon" src="@/assets/icons/question.png" alt="">
-        <img v-else :src="checked_answer" class="responseIcon">
+    <h2 v-html="question"></h2>
 
-        <h2 v-html="question"></h2>
-
-        <div v-for="answer in answers" :key="answer" @click="checkAnswer(answer)" ref="answers" class="responseBtns">
-            <button class="" v-html="answer" :answer="answer" :id="$route.params.id"></button>
-        </div>
-
-        
-
+    <div v-for="answer in answers" :key="answer" @click="checkAnswer(answer)" ref="answers" class="responseBtns">
+        <button class="" v-html="answer" :answer="answer" :id="$route.params.id"></button>
+    </div>
 </template>
 
 <style>
@@ -142,12 +137,12 @@ export default {
 }
 
 h2{
-    margin-bottom:50px;
     display: flex;
     justify-content: center;
+    text-align: center;
     font-weight: 800;
     font-size: x-large;
-    text-align: center;
+    margin-bottom:50px;
 }
 
 .responseIcon{

@@ -1,9 +1,6 @@
 <script>
 
-import axios from 'axios';
-
 export default {
-
 
     data() {
         return {
@@ -21,20 +18,11 @@ export default {
             select === 'hard' ? this.hard = true : this.hard = false
             
             this.difficulty = select
-            console.log(this.difficulty)
         }
     },
 
     created(){
 
-
-        //check category's id
-
-        /* axios.get(`https://opentdb.com/api_category.php`).then((result) => {
-            this.result = result.data;
-            console.log(this.result);
-        }) */
-        
         if (localStorage.getItem('difficulty')) {
             this.difficulty = localStorage.getItem('difficulty');
             this.setDifficulty(this.difficulty);
@@ -209,6 +197,5 @@ h2{
     margin-bottom: 2rem;
     margin-top: -2rem;
 }
-
 
 </style>
