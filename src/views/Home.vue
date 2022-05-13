@@ -5,16 +5,16 @@
 <template>
 
     <main>
-        <img class="mainIcon" src="@/icons/titleIcon.png" alt="">
+        <img class="mainIcon" src="@/assets/icons/titleIcon.png" alt="">
 
         <div class="title">
             <h1>Trivial Game</h1>
         </div>
 
-        <img src="@/icons/info.png" class="infoIcon">
+        <img src="@/assets/icons/info.png" class="infoIcon">
 
         <router-link to="category" class="startBtn">
-            <img class="startIcon" src="@/icons/start.png" alt="">
+            <img class="startIcon" src="@/assets/icons/start.png" alt="">
         </router-link>
     </main>
 

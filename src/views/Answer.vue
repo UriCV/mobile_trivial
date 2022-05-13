@@ -1,8 +1,8 @@
 <script>
 
 import axios from "axios";
-import CorrectIcon from "@/icons/cheque.png";
-import IncorrectIcon from "../icons/cross.png";
+import CorrectIcon from "@/assets/icons/cheque.png";
+import IncorrectIcon from "@/assets/icons/cross.png";
 
 export default {
 
@@ -14,7 +14,6 @@ export default {
         incorrect_answers: Array,
         answers: Array,
         show: true,
-        checked_answer: IncorrectIcon, CorrectIcon
     }),
 
     created() {
@@ -94,7 +93,7 @@ export default {
 
 <template>
 
-        <img v-if="show" class="responseIcon" src="@/icons/question.png" alt="">
+        <img v-if="show" class="responseIcon" src="@/assets/icons/question.png" alt="">
         <img v-else :src="checked_answer" class="responseIcon">
 
         <h2 v-html="question"></h2>

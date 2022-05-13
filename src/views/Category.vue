@@ -68,10 +68,10 @@ export default {
     <section class="category">
 
         <div class="iconsLeft">
-            <img src="@/icons/art.png" alt="">
-            <img src="@/icons/history.png" alt="">
-            <img src="@/icons/entertainment.png" alt="">
-            <img src="@/icons/random.png" alt="">
+            <img src="@/assets/icons/art.png" alt="">
+            <img src="@/assets/icons/history.png" alt="">
+            <img src="@/assets/icons/entertainment.png" alt="">
+            <img src="@/assets/icons/random.png" alt="">
         </div>
 
         <div class="categoryBtns">
@@ -85,9 +85,9 @@ export default {
         </div>
 
         <div class="iconsRight">
-            <img src="@/icons/geography.png" alt="">
-            <img src="@/icons/science.png" alt="">
-            <img src="@/icons/sport.png" alt="">
+            <img src="@/assets/icons/geography.png" alt="">
+            <img src="@/assets/icons/science.png" alt="">
+            <img src="@/assets/icons/sport.png" alt="">
         </div>
         
     </section>
