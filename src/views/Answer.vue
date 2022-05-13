@@ -41,7 +41,7 @@ export default {
             let randomId = idArray.splice(Math.floor(Math.random()*idArray.length), 1)[0].toString();
             this.$route.params.id = randomId;
         }
-
+// 'opentdb.com/' + iaosmdio
         axios.get(`https://opentdb.com/api.php?amount=1&category=${this.$route.params.id}&difficulty=${this.$route.params.difficulty}&type=multiple`).then((result) => {
             this.result = result.data;
             this.category = result.data.results[0].category;
@@ -80,10 +80,10 @@ export default {
                 }
             }
             
-
+            //mejor sin temporizador
             setTimeout(() => {
                 this.$router.push("/category");
-            }, 2000);
+            }, 3500);
         }
     }
 
