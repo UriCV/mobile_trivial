@@ -1,10 +1,7 @@
 <script>
-
 import axios from 'axios';
 
 export default {
-
-
     data() {
         return {
             difficulty: 'medium',
@@ -26,15 +23,11 @@ export default {
     },
 
     created(){
-
-
         //check category's id
-
         /* axios.get(`https://opentdb.com/api_category.php`).then((result) => {
             this.result = result.data;
             console.log(this.result);
         }) */
-        
         if (localStorage.getItem('difficulty')) {
             this.difficulty = localStorage.getItem('difficulty');
             this.setDifficulty(this.difficulty);
@@ -49,11 +42,9 @@ export default {
         },
     },
 }
-
 </script>
 
 <template>
-
     <section class="selectDificulty">
         <h2>Select your dificulty:</h2>
         <div class="dificultyBtns">
@@ -62,18 +53,14 @@ export default {
             <button class="hard" @click="setDifficulty('hard')">HARD</button>
         </div>
     </section>
-    
-
     <h2>Choose a Category</h2>
     <section class="category">
-
         <div class="iconsLeft">
             <img src="@/assets/icons/art.png" alt="">
             <img src="@/assets/icons/history.png" alt="">
             <img src="@/assets/icons/entertainment.png" alt="">
             <img src="@/assets/icons/random.png" alt="">
         </div>
-
         <div class="categoryBtns">
             <button :difficulty="difficulty" @click="$router.push({name: 'Answer', params: {difficulty: difficulty , id: '25'} })" class="artBtn">Art & Literature</button>
             <button :difficulty="difficulty" @click="$router.push({name: 'Answer', params: {difficulty: difficulty , id: '22'} })" class="geographyBtn">Geography</button>
@@ -83,7 +70,6 @@ export default {
             <button :difficulty="difficulty" @click="$router.push({name: 'Answer', params: {difficulty: difficulty , id: '21'} })" class="sportsBtn">Sports & Leisure</button>
             <button :difficulty="difficulty" @click="$router.push({name: 'Answer', params: {difficulty: difficulty , id: '00'} })" class="randomBtn">Random</button>
         </div>
-
         <div class="iconsRight">
             <img src="@/assets/icons/geography.png" alt="">
             <img src="@/assets/icons/science.png" alt="">
@@ -91,11 +77,9 @@ export default {
         </div>
         
     </section>
-
 </template>
 
 <style>
-
 h2{
     margin-bottom:50px;
     display: flex;
@@ -211,6 +195,4 @@ h2{
     margin-bottom: 2rem;
     margin-top: -2rem;
 }
-
-
 </style>
