@@ -8,7 +8,10 @@
         <div class="title">
             <h1>Trivial Game</h1>
         </div>
-        <img src="@/assets/icons/info.png" class="infoIcon">
+        <div class="homeIcons">
+            <img src="@/assets/icons/info.png" class="infoIcon">
+            <img src="@/assets/icons/iconCustomize.png" class="settingsIcon">
+        </div>
         <router-link to="category" class="startBtn">
             <img class="startIcon" src="@/assets/icons/start.png" alt="">
         </router-link>
@@ -72,13 +75,23 @@ h2{
     justify-content: center;
 }
 
-.infoIcon{
-    width: 100px;
-    height: 100px;
+.homeIcons{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: auto;
-    margin-right: auto;
+    gap: 4rem;
+}
+
+.infoIcon{
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.settingsIcon{
+    width: 80px;
+    height: 80px;
 }
 </style>
