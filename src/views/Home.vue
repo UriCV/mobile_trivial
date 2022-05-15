@@ -3,25 +3,19 @@
 </script>
 
 <template>
-
     <main>
         <img class="mainIcon" src="@/assets/icons/titleIcon.png" alt="">
-
         <div class="title">
             <h1>Trivial Game</h1>
         </div>
-
         <img src="@/assets/icons/info.png" class="infoIcon">
-
         <router-link to="category" class="startBtn">
             <img class="startIcon" src="@/assets/icons/start.png" alt="">
         </router-link>
     </main>
-
 </template>
 
-<style scoped>
-
+<style>
 main{
     display: flex;
     flex-direction: column;
@@ -86,7 +80,5 @@ h2{
     align-items: center;
     margin-left: auto;
     margin-right: auto;
-
 }
-
 </style>
