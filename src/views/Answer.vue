@@ -4,6 +4,7 @@ import axios from "axios";
 import CorrectIcon from "@/assets/icons/cheque.png";
 import IncorrectIcon from "@/assets/icons/cross.png";
 
+
 export default {
 
     data: () => ({
@@ -70,20 +71,15 @@ export default {
             else {
                 this.checked_answer = IncorrectIcon;
             }
-        
+
             for(let i=0; i<this.answers.length; i++){
                 if(this.$refs.answers[i].innerText == this.correct_answer){
                 this.$refs.answers[i].children[0].classList.add("correctAnswer");
-
-                } else {
-                this.$refs.answers[i].children[0].classList.add("IncorrectAnswer");
+                }
+                if(this.$refs.answers[i].innerText == answer){
+                this.$refs.answers[i].children[0].classList.add("incorrectAnswer");
                 }
             }
-            
-            //mejor sin temporizador
-            setTimeout(() => {
-                this.$router.push("/category");
-            }, 3500);
         }
     }
 
@@ -94,15 +90,19 @@ export default {
 <template>
 
         <img v-if="show" class="responseIcon" src="@/assets/icons/question.png" alt="">
-        <img v-else :src="checked_answer" class="responseIcon">
 
-        <h2 v-html="question"></h2>
+            <img v-if="!show" :src="checked_answer" class="responseIcon">
+
+        <h2 v-html="question" class="answer"></h2>
 
         <div v-for="answer in answers" :key="answer" @click="checkAnswer(answer)" ref="answers" class="responseBtns">
+        <!-- if button answer is not correct answer add class "incorrctAnswer" -->
             <button class="" v-html="answer" :answer="answer" :id="$route.params.id"></button>
         </div>
 
-        
+        <router-link v-if="!show" to="category" class="returnBtn">
+            <img src="@/assets/icons/nextPage.png">
+        </router-link>
 
 </template>
 
@@ -112,20 +112,12 @@ export default {
     margin: 0.1rem;
 }
 
-.correctAnswer{
-    background-color: #71FF7F;
-}
-
-.IncorrectAnswer{
-    background-color: #FF7F7F;
-}
-
 .responseBtns{
     display: flex;
     flex-direction: column;
     justify-content: center, space-between;
     align-items: center;
-    gap: 5rem;
+    margin-top: -.5rem;
 }
 
 .responseBtns button{
@@ -141,22 +133,46 @@ export default {
     margin-top: 1.5rem;
 }
 
-h2{
-    margin-bottom:50px;
+.incorrectAnswer{
+    background-color: #FF7F7F;
+}
+
+.correctAnswer{
+    background-color: #71FF7F;
+}
+
+.answer{
     display: flex;
     justify-content: center;
     font-weight: 800;
-    font-size: x-large;
+    font-size: 1.5rem;
     text-align: center;
+    margin-bottom: 1rem;
 }
 
 .responseIcon{
-    margin-bottom: 3rem;
+    margin-top: -10rem;
+    margin-bottom: 4rem;
     margin-left: auto;
     margin-right: auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 130px;
+    height: 130px;
+}
+
+.returnBtn{
+    rotate: 180deg;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.returnBtn img{
+    transform: rotate(180deg);
+    position: fixed;
+    margin-top: 5rem;
+    padding-left: 2rem;
 }
 
 </style>
