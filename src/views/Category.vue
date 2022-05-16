@@ -15,7 +15,6 @@ export default {
             select === 'easy' ? this.easy = true : this.easy = false
             select === 'medium' ? this.medium = true : this.medium = false
             select === 'hard' ? this.hard = true : this.hard = false
-            
             this.difficulty = select
         }
     },
@@ -39,7 +38,7 @@ export default {
 
 <template>
     <section class="selectDificulty">
-        <h2>Select your dificulty:</h2>
+        <h2 class="dificultyTitle">Select your dificulty:</h2>
         <div class="dificultyBtns">
             <button class="easy" @click="setDifficulty('easy')">EASY</button>
             <button class="medium" @click="setDifficulty('medium')">MEDIUM</button>
@@ -68,8 +67,10 @@ export default {
             <img src="@/assets/icons/science.png" alt="">
             <img src="@/assets/icons/sport.png" alt="">
         </div>
-        
     </section>
+    <router-link to="/" class="returnHomeBtn">
+        <img src="@/assets/icons/nextPage.png">
+    </router-link>
 </template>
 
 <style>
@@ -80,10 +81,14 @@ h2{
     margin-bottom: 1rem;
 }
 
+.dificultyTitle{
+    margin-top: -4rem;
+}
+
 .category{
     display: flex;
     gap: 10px;
-    margin-top: -1rem;
+    margin-top: -2rem;
 }
 
 .categoryBtns{
@@ -108,14 +113,14 @@ h2{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 90px;
+    gap: 70px;
 }
 
 .iconsRight{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 90px;
+    gap: 70px;
 }
 
 .artBtn{
@@ -170,7 +175,6 @@ h2{
 }
 
 .dificultyBtns button:hover{
-    /* opaque */
     opacity: 0.5;
 }
 
@@ -185,5 +189,11 @@ h2{
 .selectDificulty{
     margin-bottom: 2rem;
     margin-top: -2rem;
+}
+
+.returnHomeBtn img{
+    transform: rotate(180deg);
+    position: fixed;
+    padding-right: 16rem;
 }
 </style>
