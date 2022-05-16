@@ -36,6 +36,7 @@ export default {
             let randomId = idArray.splice(Math.floor(Math.random()*idArray.length), 1)[0].toString();
             this.$route.params.id = randomId;
         }
+        // 'opentdb.com/' + iaosmdio
         axios.get(`https://opentdb.com/api.php?amount=1&category=${this.$route.params.id}&difficulty=${this.$route.params.difficulty}&type=multiple`).then((result) => {
             this.result = result.data;
             this.category = result.data.results[0].category;
@@ -52,7 +53,6 @@ export default {
 
     methods: {
         checkAnswer(answer) {
-
             this.show = false;
             if (answer == this.correct_answer) {
                 this.checked_answer = CorrectIcon;
@@ -63,16 +63,11 @@ export default {
             for(let i=0; i<this.answers.length; i++){
                 if(this.$refs.answers[i].innerText == this.correct_answer){
                 this.$refs.answers[i].children[0].classList.add("correctAnswer");
-
-                } else {
-                this.$refs.answers[i].children[0].classList.add("IncorrectAnswer");
+                }
+                if(this.$refs.answers[i].innerText == answer){
+                this.$refs.answers[i].children[0].classList.add("incorrectAnswer");
                 }
             }
-            
-
-            setTimeout(() => {
-                this.$router.push("/category");
-            }, 2000);
         }
     }
 };
@@ -95,20 +90,12 @@ export default {
     margin: 0.1rem;
 }
 
-.correctAnswer{
-    background-color: #71FF7F;
-}
-
-.IncorrectAnswer{
-    background-color: #FF7F7F;
-}
-
 .responseBtns{
     display: flex;
     flex-direction: column;
     justify-content: center, space-between;
     align-items: center;
-    gap: 5rem;
+    margin-top: -.5rem;
 }
 
 .responseBtns button{
@@ -124,21 +111,45 @@ export default {
     margin-top: 1.5rem;
 }
 
-h2{
+.incorrectAnswer{
+    background-color: #FF7F7F;
+}
+
+.correctAnswer{
+    background-color: #71FF7F;
+}
+
+.answer{
     display: flex;
     justify-content: center;
-    text-align: center;
     font-weight: 800;
-    font-size: x-large;
-    margin-bottom:50px;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
 }
 
 .responseIcon{
-    margin-bottom: 3rem;
+    margin-top: -10rem;
+    margin-bottom: 4rem;
     margin-left: auto;
     margin-right: auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 130px;
+    height: 130px;
+}
+
+.returnBtn{
+    rotate: 180deg;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.returnBtn img{
+    transform: rotate(180deg);
+    position: fixed;
+    margin-top: 5rem;
+    padding-left: 2rem;
 }
 </style>
