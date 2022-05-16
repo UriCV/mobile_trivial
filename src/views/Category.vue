@@ -1,4 +1,5 @@
 <script>
+import axios from 'axios';
 
 export default {
     data() {
@@ -75,10 +76,12 @@ export default {
 
 <style>
 h2{
+    margin-bottom:50px;
     display: flex;
     justify-content: center;
     font-weight: 800;
-    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
 }
 
 .dificultyTitle{

@@ -36,7 +36,6 @@ export default {
             let randomId = idArray.splice(Math.floor(Math.random()*idArray.length), 1)[0].toString();
             this.$route.params.id = randomId;
         }
-        // 'opentdb.com/' + iaosmdio
         axios.get(`https://opentdb.com/api.php?amount=1&category=${this.$route.params.id}&difficulty=${this.$route.params.difficulty}&type=multiple`).then((result) => {
             this.result = result.data;
             this.category = result.data.results[0].category;
@@ -108,7 +107,7 @@ export default {
     width: 370px;
     height: 45px;
     font-weight: 600;
-    margin-top: 1.5rem;
+    margin-top: 2.5rem;
 }
 
 .incorrectAnswer{
