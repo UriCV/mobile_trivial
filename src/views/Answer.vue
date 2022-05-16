@@ -76,9 +76,11 @@ export default {
         <img v-if="show" class="responseIcon" src="@/assets/icons/question.png" alt="">
         <img v-if="!show" :src="checked_answer" class="responseIcon">
         <h2 v-html="question" class="answer"></h2>
-        <div v-for="answer in answers" :key="answer" @click="checkAnswer(answer)" ref="answers" class="responseBtns">
-            <button class="" v-html="answer" :answer="answer" :id="$route.params.id"></button>
-        </div>
+        <section class="responseBtns">
+            <div v-for="answer in answers" :key="answer" @click="checkAnswer(answer)" ref="answers" >
+                <button class="responseBtn" v-html="answer" :answer="answer" :id="$route.params.id"></button>
+            </div>
+        </section>
         <router-link v-if="!show" to="category" class="returnBtn">
             <img src="@/assets/icons/nextPage.png">
         </router-link>
@@ -92,12 +94,12 @@ export default {
 .responseBtns{
     display: flex;
     flex-direction: column;
-    justify-content: center, space-between;
+    justify-content: center;
     align-items: center;
-    margin-top: -.5rem;
+    gap: 1.3rem;
 }
 
-.responseBtns button{
+.responseBtn{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -107,7 +109,6 @@ export default {
     width: 370px;
     height: 45px;
     font-weight: 600;
-    margin-top: 2.5rem;
 }
 
 .incorrectAnswer{
