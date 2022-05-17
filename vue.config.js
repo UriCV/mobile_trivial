@@ -1,3 +1,5 @@
 module.exports = {
-    publicPath: '/mobile-trivial/'
+    publicPath: process.env.NODE_ENV === 'production'
+    ? '/mobile_trivial/'
+    : '/'
 }
