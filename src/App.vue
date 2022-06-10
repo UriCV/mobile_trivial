@@ -1,4 +1,15 @@
-<script setup>
+<script>
+
+export default {
+    name: "Info",
+    el: '#info',
+    data() {
+        return {
+            showModal: true
+        };
+    },
+    components: {}
+};
 
 </script>
 

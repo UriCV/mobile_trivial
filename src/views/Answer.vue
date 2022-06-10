@@ -15,7 +15,7 @@ export default {
         show: true,
     }),
 
-    created() {
+    created () {
         if (this.$route.params.id == "00") {
             let idArray = [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32];
             let randomId = idArray.splice(Math.floor(Math.random()*idArray.length), 1)[0].toString();
@@ -86,10 +86,7 @@ export default {
         </router-link>
 </template>
 
-<style>
-*{
-    margin: 0.1rem;
-}
+<style scoped>
 
 .responseBtns{
     display: flex;

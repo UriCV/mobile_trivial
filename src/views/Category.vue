@@ -48,8 +48,8 @@ export default {
     </section>
     <h2>Choose a Category</h2>
     <section class="category">
-        <div class="iconsLeft">
-            <img src="@/assets/icons/art.png" alt="">
+        <div class="iconsLeft">  
+            <img src="@/assets/icons/art.png">
             <img src="@/assets/icons/history.png" alt="">
             <img src="@/assets/icons/entertainment.png" alt="">
             <img src="@/assets/icons/random.png" alt="">
@@ -117,6 +117,12 @@ h2{
     flex-direction: column;
     justify-content: center;
     gap: 70px;
+    margin-left: 30px;
+}
+
+.iconsLeft img{
+    width: 60px;
+    height: 60px;
 }
 
 .iconsRight{
@@ -124,6 +130,12 @@ h2{
     flex-direction: column;
     justify-content: center;
     gap: 70px;
+    margin-right: 30px;
+}
+
+.iconsRight img{
+    width: 60px;
+    height: 60px;
 }
 
 .artBtn{
